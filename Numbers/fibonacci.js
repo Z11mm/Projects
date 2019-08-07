@@ -27,6 +27,5 @@ const generateFibonacci = () => {
 }
 
 document.querySelector('.btn').addEventListener('click', (e) => {
-
     console.log(generateFibonacci());
 });
