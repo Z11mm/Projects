@@ -12,7 +12,7 @@ const isUpperCase = (str) => {
     return str === str.toUpperCase();
 }
 
-// To encrypt using a caesar cipher
+// To encrypt a string using a caesar cipher
 const caesarCipher = (str, key) => {
     let encrypt = '';
 
@@ -42,4 +42,4 @@ const caesarDecipher = (str, key) => {
     return decrypt;
 }
 
-console.log(caesarDecipher('yrryaiyrmlac', 24));
+caesarDecipher('yrryaiyrmlac', 24);
