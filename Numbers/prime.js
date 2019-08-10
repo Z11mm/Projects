@@ -1,23 +1,28 @@
 /* 
 Have the user enter a number and find all Prime Factors (if there are any) and display them.
 */
+const checkForPrime = (i) => {
+    for (let j = 2; j < i; j++ ) {
+        if (i % j === 0) {
+            return false;
+        }
+    }
+    return true;
+};
 
-const primeFactors = (number) => {
-    let primes = [1, 2, 3];
+
+const generatePrimeFactors = (number) => {
     let primeFactors = [];
 
-    for (let i = 4; i <= number; i++) {
-        if (i % 2 === 1) {
-            primes.push(i);
+    for (let i = 2; i <= number; i++) {
+        if (checkForPrime(i) && number % i === 0) {
+            primeFactors.push(i);
         }
     }
 
-    for (let i = 0; i < primes.length; i++) {
-        if (number % primes[i] === 0) {
-            primeFactors.push(primes[i]);
-        }
-    }
-    return primeFactors;
-}
+    return primeFactors.toString();
+};
 
-console.log(primeFactors(24));
+document.querySelector('.btn').addEventListener('click', (e) => {
+    console.log(generatePrimeFactors(180));
+});
